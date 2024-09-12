@@ -1,12 +1,12 @@
 "use client"
 
-import Image from 'next/image'
+import Image from "next/image";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Article, NewsApiResponse } from './types';
 
 const API_KEY = '4254db688f184281ad04fc136c40c4aa'; // Remplacez par votre clé API News API
-const NEWS_API_URL = `https://newsapi.org/v2/evrything?q=SEO&from=2024-09-12&sortBy=popularity&apiKey=${API_KEY}`;
+const NEWS_API_URL = `https://newsapi.org/v2/everything?q=SEO&from=2024-09-11&sortBy=popularity&apiKey=${API_KEY}`;
 
 const App: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -50,7 +50,7 @@ const App: React.FC = () => {
             <a href={article.url} target="_blank" rel="noopener noreferrer">
               Lire plus
             </a>
-            {article.urlToImage && <Image src={article.urlToImage} alt={article.title} width={200} />}
+            {article.urlToImage && <Image src={article.urlToImage} alt={article.title} width={200} height={200} priority={true} />}
           </li>
         ))}
       </ul>
