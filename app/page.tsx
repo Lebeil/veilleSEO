@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Article, NewsApiResponse } from './types';
 
-const API_KEY = '4254db688f184281ad04fc136c40c4aa'; // Remplacez par votre clé API News API
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 const NEWS_API_URL = `https://newsapi.org/v2/everything?q=SEO&from=2024-09-11&sortBy=popularity&apiKey=${API_KEY}`;
 
 const App: React.FC = () => {
